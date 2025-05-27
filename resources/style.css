@@ -1,0 +1,45 @@
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  width: 0;
+  border-right: 0.15em solid orange;
+}
+
+/* Line 1: 3s typing with 35 characters */
+.line1 {
+  animation: 
+    typing 3s steps(35, end) forwards,
+    blink-caret .5s step-end infinite;
+}
+
+/* Line 2: delay 3s, then 2.25s typing (15 characters) */
+.line2 {
+  animation: 
+    typing 3s steps(35, end) 1s forwards,
+    blink-caret .5s step-end infinite;
+  margin-top: 0.5em;
+}
+
+/* Keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}

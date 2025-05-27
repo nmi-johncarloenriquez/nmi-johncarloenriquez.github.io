@@ -1,1 +1,26 @@
-<h1>John Carlo Enriquez Portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jaycee Portfolio</title>
+  <link rel="stylesheet" href="resources/style.css">
+</head>
+<body>
+  <div class="typewriter">
+    <h1 class="line line1">Hi! I'm Jaycee, a web developer.</h1>
+    <h1 class="line line2">How can I help you?</h1>
+  </div>
+
+  <script>
+    // Remove blinking cursor after line 1 is done typing
+    setTimeout(() => {
+      document.querySelector('.line1').style.borderRight = 'none';
+    }, 3000); // line 1 duration
+    
+    document.querySelector('.line2').style.display = 'none';
+    setTimeout(() => {
+      document.querySelector('.line2').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
