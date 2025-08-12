@@ -7,6 +7,11 @@ body {
   align-items: center;
 }
 
+.typewriter {
+  text-align: center;
+  font-size: 25px;
+}
+
 .line {
   color: #fff;
   font-family: monospace;
@@ -28,7 +33,7 @@ body {
 /* Line 2: delay 3s, then 2.25s typing (15 characters) */
 .line2 {
   animation: 
-    typing 3s steps(35, end) 1s forwards,
+    typing2 2.25s steps(35, end) 1s forwards,
     blink-caret .5s step-end infinite;
   margin-top: 0.5em;
 }
@@ -39,7 +44,64 @@ body {
   to { width: 100% }
 }
 
+@keyframes typing2 {
+  from { width: 0; border-right: 0.15em solid orange; }
+  to { width: 100%; border-right: none; } /* caret removed at end */
+}
+
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
+}
+
+.button-container {
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1em;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tech-stack-container{
+  display: inherit;
+  justify-content: center;
+  gap: 1rem;
+  margin-top:2%;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.img-logo {
+  max-width: 3%;
+}
+
+/* Fade-up animation */
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-btn {
+  padding: 0.5em 1.2em;
+  background: orange;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+.popup-btn:hover {
+  background: #ffb84d;
 }

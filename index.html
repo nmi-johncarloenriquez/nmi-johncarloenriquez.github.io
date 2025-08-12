@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jaycee Portfolio</title>
-  <link rel="stylesheet" href="resources/style.css">
+<meta charset="UTF-8">
+<title>Jaycee Portfolio</title>
+<link rel="stylesheet" href="resources/style.css">
 </head>
 <body>
-  <div class="typewriter">
-    <h1 class="line line1">Hi! I'm Jaycee, a web developer.</h1>
-    <h1 class="line line2">How can I help you?</h1>
-  </div>
+<div class="typewriter">
+  <p class="line line1">Hi! I'm Jaycee, a web developer.</p>
+  <p class="line line2">How can I help you?</p>
+</div>
 
-  <script>
-    // Remove blinking cursor after line 1 is done typing
-    setTimeout(() => {
-      document.querySelector('.line1').style.borderRight = 'none';
-    }, 3000); // line 1 duration
-    
-    document.querySelector('.line2').style.display = 'none';
-    setTimeout(() => {
-      document.querySelector('.line2').style.display = 'block';
-    }, 3000);
+<div class="button-container" id="popupButtons">
+  <button class="popup-btn">About Me</button>
+  <button class="popup-btn">My Experience</button>
+</div>
+
+<div class="tech-stack-container" id="popupIcons">
+  <img src="resources/img/html-5.svg" alt="html-logo" class="img-logo">
+  <img src="resources/img/css-3.svg" alt="css-logo" class="img-logo">
+  <img src="resources/img/javascript.svg" alt="js-logo" class="img-logo">
+  <img src="resources/img/php.svg" alt="php-logo" class="img-logo">
+  <img src="resources/img/mysql.svg" alt="mysql-logo" class="img-logo">
+  <img src="resources/img/docker-icon.svg" alt="docker-logo" class="img-logo">
+</div>
+
+
+
+<script>
+  // Remove blinking cursor after line 1 is done typing
+  setTimeout(() => {
+    document.querySelector('.line1').style.borderRight = 'none';
+  }, 3000); // line 1 duration
+  
+  document.querySelector('.line2').style.display = 'none';
+  setTimeout(() => {
+    document.querySelector('.line2').style.display = 'block';
+  }, 3000);
+
+  setTimeout(() => {
+    document.getElementById('popupButtons').classList.add('fade-up');
+  }, 6000); 
+
+  setTimeout(() => {
+    document.getElementById('popupIcons').classList.add('fade-up');
+  }, 6500); 
+
   </script>
 </body>
 </html>
