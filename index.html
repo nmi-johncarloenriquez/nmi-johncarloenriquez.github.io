@@ -1,55 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Jaycee Portfolio</title>
-<link rel="stylesheet" href="resources/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>John Carlo Enriquez | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+          href="resources/style.css">
 </head>
+
 <body>
-<div class="typewriter">
-  <p class="line line1">Hi! I'm Jaycee, a web developer.</p>
-  <p class="line line2">How can I help you?</p>
-</div>
 
-<div class="button-container" id="popupButtons">
-  <button class="popup-btn">About Me</button>
-  <button class="popup-btn">My Experience</button>
-</div>
+<!-- Scroll Progress -->
+<div id="progress-bar"></div>
 
-<div class="tech-stack-container" id="popupIcons">
-  <img src="resources/img/html-5.svg" alt="html-logo" class="img-logo">
-  <img src="resources/img/css-3.svg" alt="css-logo" class="img-logo">
-  <img src="resources/img/javascript.svg" alt="js-logo" class="img-logo">
-  <img src="resources/img/php.svg" alt="php-logo" class="img-logo">
-  <img src="resources/img/mysql.svg" alt="mysql-logo" class="img-logo">
-  <img src="resources/img/docker-icon.svg" alt="docker-logo" class="img-logo">
-  <img src="resources/img/postman-icon.svg" alt="postman-logo" class="img-logo">
-  <img src="resources/img/git-icon.svg" alt="git-logo" class="img-logo">
-  <img src="resources/img/github-icon.svg" alt="github-logo" class="img-logo">
-  <img src="resources/img/bitbucket.svg" alt="bitbucket-logo" class="img-logo">
-</div>
+<!-- ========================= -->
+<!-- Navigation -->
+<!-- ========================= -->
 
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
 
+    <div class="container">
 
-<script>
-  // Remove blinking cursor after line 1 is done typing
-  setTimeout(() => {
-    document.querySelector('.line1').style.borderRight = 'none';
-  }, 3000); // line 1 duration
-  
-  document.querySelector('.line2').style.display = 'none';
-  setTimeout(() => {
-    document.querySelector('.line2').style.display = 'block';
-  }, 3000);
+        <a class="navbar-brand fw-bold text-white"
+           href="#">
+            Jaycee's Portfolio
+        </a>
 
-  setTimeout(() => {
-    document.getElementById('popupButtons').classList.add('fade-up');
-  }, 6000); 
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-  setTimeout(() => {
-    document.getElementById('popupIcons').classList.add('fade-up');
-  }, 6500); 
+            <span class="navbar-toggler-icon"></span>
 
-  </script>
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#experience">
+                        Experience
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ========================= -->
+<!-- Hero -->
+<!-- ========================= -->
+
+<section id="contact"
+         class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6"
+                 data-aos="fade-right">
+
+                <span class="small-title">
+                    Hello, I'm
+                </span>
+
+                <h1 class="display-3 fw-bold mt-2">
+
+                    John Carlo Enriquez
+
+                </h1>
+
+                <h3 class="typing-text mt-3">
+
+                    <span id="typing"></span>
+
+                </h3>
+
+                <p class="lead mt-4">
+
+                    Im a Web Developer with 8 years of
+                    experience building enterprise web applications,
+                    CMS platforms, REST APIs, fixing SEO and web-based solutions.
+
+                </p>
+
+                <div class="contact-list mt-5">
+
+                    <div>
+                        <i class="bi bi-phone"></i> 09761417883
+                    </div>
+
+                    <div>
+                        <i class="bi bi-envelope"></i> enriquezjohncarlo@gmail.com
+                    </div>
+
+                    <div>
+                        <i class="bi bi-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/john-carlo-enriquez-628289144/" target="_blank"> Profile </a>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-file-arrow-down"></i> <a href="resources/img/John Carlo Enriquez - Resume.pdf" target="_blank"> Resume </a>
+                    </div>
+
+                </div>
+
+                <div class="mt-5">
+                    <a href="#projects" class="btn btn-primary btn-lg"> View Projects </a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center"
+                 data-aos="fade-left">
+
+                <div class="profile-wrapper">
+
+                    <img src="resources/img/picture.jpeg" class="img-fluid rounded-circle shadow-lg profile-image" alt="Profile">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+
+        <i class="bi bi-chevron-double-down"></i>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section id="skills" class="section-padding">
+
+    <div class="container">
+
+        <div class="section-title text-center mb-5"
+             data-aos="fade-up">
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                Technologies that power the applications
+                I've built throughout my career.
+            </p>
+
+        </div>
+
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-5 mb-5 mb-lg-0">
+
+                <div class="skill-bottle">
+
+                    <div class="bottle-neck"></div>
+
+                    <div class="bottle-body">
+
+                        <div class="icon-container">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-7">
+
+                <div class="skill-list">
+
+                    <div class="skill-group">
+
+                        <h5>Backend</h5>
+
+                        <p>
+                            PHP (Laravel, CodeIgniter), Node.js
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Frontend</h5>
+
+                        <p>
+                            HTML5, CSS3, Bootstrap 3–5,
+                            JavaScript, jQuery
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Database</h5>
+
+                        <p>MySQL</p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>API Development</h5>
+
+                        <p>
+                            RESTful API Development &
+                            Integration
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Cloud & AWS</h5>
+
+                        <p>
+                            SES • S3 Bucket • IAM
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Development Tools</h5>
+
+                        <p>
+                            Docker • Git • Github • Bitbucket
+                            • Jira • Postman
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>IDE</h5>
+
+                        <p>
+                            Visual Studio Code,
+                            Sublime Text
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Servers</h5>
+
+                        <p>
+                            Apache • Nginx
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>CMS</h5>
+
+                        <p>
+                            Magnolia • TeamSite • Custom CMS
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Artificial Intelligence</h5>
+
+                        <p>
+                            ChatGPT • Gemini
+                        </p>
+
+                    </div>
+
+                    <div class="skill-group">
+
+                        <h5>Operating Systems</h5>
+
+                        <p>
+                            Windows 10/11,
+                            macOS (Apple Silicon)
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Experience -->
+<!-- ========================= -->
+
+<section id="experience"
+         class="section-padding bg-light">
+
+    <div class="container">
+
+        <div class="section-title"
+             data-aos="fade-up">
+
+            <h2>
+
+                Experience
+
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item left"
+                 data-aos="fade-right">
+
+                <div class="timeline-content">
+
+                  <div class="timeline-year">
+                      September 2021 - Present
+                  </div>
+
+                  <h4>GMA New Media Inc.</h4>
+
+                  <span>Associate Developer</span>
+
+                  <p>
+                      Developing enterprise web applications, RESTful APIs,
+                      CMS platforms, AWS integrations, Docker environments,
+                      and internal systems for large-scale projects.
+                  </p>
+
+              </div>
+
+            </div>
+
+            <div class="timeline-item right"
+                 data-aos="fade-left">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">
+                        December 2020 - September 2021
+                    </div>
+
+                    <h4>Collabera | Avon</h4>
+
+                    <span>Digital Platform Analyst</span>
+
+                    <p>
+                        Managed Avon.ph website content.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item left"
+                 data-aos="fade-right">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-year">
+                        October 2017 - January 2020
+                    </div>
+
+                    <h4>Bestank Manufacturing Corporation</h4>
+
+                    <span>Jr. Programmer</span>
+
+                    <p>
+                        Built internal HRMS, Purchasing, Inventory,
+                        and Employee Management Systems using PHP and MySQL.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Projects -->
+<!-- ========================= -->
+
+<section id="projects"
+         class="section-padding">
+
+    <div class="container">
+
+        <div class="section-title"
+             data-aos="fade-up">
+
+            <h2>
+
+                Projects
+
+            </h2>
+
+        </div>
+
+        <div id="projectCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>SM Supermalls Website</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>Mister Donut Revamp</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>GMA Regional TV</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>Battle of the Judges</h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="carousel-item">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>Avon.ph CMS</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>HRMS</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>LPMS</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="project-card">
+
+                                <img src="https://placehold.co/600x400"
+                                     class="img-fluid">
+
+                                <h5>IT Inventory System</h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev"
+                    data-bs-target="#projectCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button class="carousel-control-next"
+                    data-bs-target="#projectCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- Footer -->
+<!-- ========================= -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <h4>
+
+            John Carlo Enriquez
+
+        </h4>
+
+        <p>
+
+            Full Stack PHP Developer
+
+        </p>
+
+        <small>
+
+            © 2026 All Rights Reserved.
+
+        </small>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Custom JS -->
+<script src="resources/script.js"></script>
+
 </body>
+
 </html>
