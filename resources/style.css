@@ -1270,13 +1270,9 @@ body{
 .timeline{
 
     position:relative;
-
     width:100%;
-
-    max-width:1200px;
-
+    max-width:1400px;
     margin:auto;
-
     padding:40px 0;
 
 }
@@ -1324,7 +1320,7 @@ body{
 
     width:50%;
 
-    padding:20px 60px;
+    padding:20px 40px;
 
 }
 
@@ -1335,7 +1331,7 @@ body{
 
     left:0;
 
-    text-align:right;
+    text-align:left;
 
 }
 
@@ -2417,5 +2413,422 @@ a:focus{
     font-size:34px;
 
     animation-fill-mode:forwards;
+
+}
+
+
+/* ==========================================================
+   TECH STACK
+   ========================================================== */
+
+.tech-stack-wrapper {
+
+    width: 100%;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.tech-stack-title {
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================================
+   TECH STACK GRID
+   ========================================================== */
+
+.tech-stack-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 14px;
+
+}
+
+
+/* ==========================================================
+   TECH ITEM
+   ========================================================== */
+
+.tech-item {
+
+    min-height: 82px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 5px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* ==========================================================
+   ICON
+   ========================================================== */
+
+.tech-item i {
+
+    font-size: 30px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+/* ==========================================================
+   LABEL
+   ========================================================== */
+
+.tech-item span {
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+
+}
+
+
+/* ==========================================================
+   HOVER
+   ========================================================== */
+
+.tech-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    background:
+        rgba(255, 255, 255, .12);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .18);
+
+}
+
+.tech-item:hover i {
+
+    transform:
+        scale(1.15);
+
+}
+
+
+/* ==========================================================
+   ACTUAL TECHNOLOGY COLORS
+   ========================================================== */
+
+.tech-item:nth-child(1) i {
+    color: #777BB4;
+}
+
+.tech-item:nth-child(2) i {
+    color: #FF2D20;
+}
+
+.tech-item:nth-child(3) i {
+    color: #F14F29;
+}
+
+.tech-item:nth-child(4) i {
+    color: #68A063;
+}
+
+.tech-item:nth-child(5) i {
+    color: #F7DF1E;
+}
+
+.tech-item:nth-child(6) i {
+    color: #0769AD;
+}
+
+.tech-item:nth-child(7) i {
+    color: #E34F26;
+}
+
+.tech-item:nth-child(8) i {
+    color: #1572B6;
+}
+
+.tech-item:nth-child(9) i {
+    color: #7952B3;
+}
+
+.tech-item:nth-child(10) i {
+    color: #00758F;
+}
+
+.tech-item:nth-child(11) i {
+    color: #F05032;
+}
+
+.tech-item:nth-child(12) i {
+    color: #ffffff;
+}
+
+.tech-item:nth-child(13) i {
+    color: #2684FF;
+}
+
+.tech-item:nth-child(14) i {
+    color: #2496ED;
+}
+
+.tech-item:nth-child(15) i {
+    color: #2684FF;
+}
+
+.tech-item:nth-child(16) i {
+    color: #FF6C37;
+}
+
+.tech-item:nth-child(17) i {
+    color: #FF9900;
+}
+
+.tech-item:nth-child(18) i {
+    color: #FF9900;
+}
+
+.tech-item:nth-child(19) i {
+    color: #569A31;
+}
+
+.tech-item:nth-child(20) i {
+    color: #FF9900;
+}
+
+.tech-item:nth-child(21) i {
+    color: #E34F26;
+}
+
+.tech-item:nth-child(22) i {
+    color: #009639;
+}
+
+.tech-item:nth-child(23) i {
+    color: #10A37F;
+}
+
+.tech-item:nth-child(24) i {
+    color: #4285F4;
+}
+
+.tech-item:nth-child(25) i {
+    color: #8B5E3C;
+}
+
+.tech-item:nth-child(26) i {
+    color: #0A2947;
+}
+
+.tech-item:nth-child(27) i {
+    color: #555555;
+}
+
+.tech-item:nth-child(28) i {
+    color: #0078D4;
+}
+
+.tech-item:nth-child(29) i {
+    color: #ffffff;
+}
+
+@media (max-width: 1199px) {
+
+    .tech-stack-grid {
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    .tech-stack-wrapper {
+
+        max-width: 650px;
+
+    }
+
+    .tech-stack-grid {
+
+        grid-template-columns:
+            repeat(6, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .tech-stack-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .tech-stack-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+
+    }
+
+    .tech-item {
+
+        min-height: 75px;
+
+    }
+
+    .tech-item i {
+
+        font-size: 25px;
+
+    }
+
+    .tech-item span {
+
+        font-size: 10px;
+
+    }
+
+}
+
+/* ========================= */
+/* Experience Company */
+/* ========================= */
+
+.timeline-company {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.company-logo {
+    width: 90px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+}
+
+.timeline-company h4 {
+    margin-bottom: 5px;
+}
+
+.timeline-company span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-year {
+    margin-bottom: 0;
+    }
+
+/* ========================= */
+/* Experience List */
+/* ========================= */
+
+.experience-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.experience-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.experience-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media (max-width: 576px) {
+
+    .company-logo {
+        width: 80px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .experience-list {
+        padding-left: 18px;
+    }
+
+    .experience-list li {
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
 
 }
