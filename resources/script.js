@@ -295,3 +295,45 @@ function throttle(callback, delay){
     };
 
 }
+
+/* ==========================================================
+   EXPERIENCE IMAGE ANIMATION
+   ========================================================== */
+
+const experienceItems = document.querySelectorAll(
+    '.timeline-item'
+);
+
+const experienceObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                    'visual-visible'
+                );
+
+            } else {
+
+                entry.target.classList.remove(
+                    'visual-visible'
+                );
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.35
+    }
+);
+
+
+experienceItems.forEach(item => {
+
+    experienceObserver.observe(item);
+
+});

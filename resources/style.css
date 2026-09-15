@@ -1713,6 +1713,91 @@ body{
 
 }
 
+/* ========================= */
+/* Experience Company */
+/* ========================= */
+
+.timeline-company {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.company-logo {
+    width: 150px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+}
+
+.timeline-company h4 {
+    margin-bottom: 5px;
+}
+
+.timeline-company span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-year {
+    margin-bottom: 0;
+    }
+
+/* ========================= */
+/* Experience List */
+/* ========================= */
+
+.experience-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.experience-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.experience-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media (max-width: 576px) {
+
+    .company-logo {
+        width: 80px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .experience-list {
+        padding-left: 18px;
+    }
+
+    .experience-list li {
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+
+}
+
+
 
 /* ==========================================================
    Small Devices
@@ -1737,6 +1822,292 @@ body{
         font-size:14px;
 
     }
+}
+
+/* ==========================================================
+   EXPERIENCE VISUALS
+   ========================================================== */
+
+.timeline-visual {
+
+    position: absolute;
+
+    top: 25%;
+
+    width: calc(100% - 40px);
+    height: 280px;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+.timeline-image-solo {
+    top: 35%!important;
+}
+
+
+/* ==========================================================
+   LEFT ITEM
+   Visual appears on RIGHT
+   ========================================================== */
+
+.timeline-item.left .timeline-visual {
+
+    left: 100%;
+    margin-left: 20px;
+
+}
+
+
+/* ==========================================================
+   RIGHT ITEM
+   Visual appears on LEFT
+   ========================================================== */
+
+.timeline-item.right .timeline-visual {
+
+    right: 100%;
+    margin-right: 20px;
+
+}
+
+
+/* ==========================================================
+   IMAGE
+   ========================================================== */
+
+.experience-image {
+
+    position: absolute;
+    width: 500px;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.16);
+
+    overflow: hidden;
+    opacity: 0;
+    transition:
+        transform .45s ease,
+        box-shadow .35s ease;
+
+}
+
+
+/* Image */
+
+.experience-image img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==========================================================
+   MAIN IMAGE
+   ========================================================== */
+
+.image-main {
+
+    top: 20px;
+    left: 50%;
+    transform:
+        translateX(-50%)
+        translateY(50px)
+        rotate(-4deg);
+
+}
+
+
+/* ==========================================================
+   SECONDARY IMAGE
+   ========================================================== */
+
+.image-secondary {
+
+    top: 400px;
+    left: 50%;
+    transform:
+        translateX(-50%)
+        translateY(50px)
+        rotate(5deg);
+
+}
+
+
+/* ==========================================================
+   LEFT EXPERIENCE
+   Images enter from LEFT
+   ========================================================== */
+
+.timeline-item.left .image-main {
+
+    transform:
+        translateX(-50%)
+        translateX(-100px)
+        rotate(-8deg);
+
+}
+
+.timeline-item.left .image-secondary {
+
+    transform:
+        translateX(-50%)
+        translateX(-140px)
+        rotate(8deg);
+
+}
+
+
+/* ==========================================================
+   RIGHT EXPERIENCE
+   Images enter from RIGHT
+   ========================================================== */
+
+.timeline-item.right .image-main {
+
+    transform:
+        translateX(-50%)
+        translateX(100px)
+        rotate(8deg);
+
+}
+
+.timeline-item.right .image-secondary {
+
+    transform:
+        translateX(-50%)
+        translateX(140px)
+        rotate(-8deg);
+
+}
+
+
+/* ==========================================================
+   ACTIVE STATE
+   ========================================================== */
+
+.timeline-item.visual-visible .experience-image {
+
+    opacity: 1;
+
+}
+
+
+.timeline-item.visual-visible.left .image-main {
+
+    transform:
+        translateX(-50%)
+        translateX(0)
+        rotate(-4deg);
+
+}
+
+
+.timeline-item.visual-visible.left .image-secondary {
+
+    transform:
+        translateX(-50%)
+        translateX(0)
+        rotate(5deg);
+
+}
+
+
+.timeline-item.visual-visible.right .image-main {
+
+    transform:
+        translateX(-50%)
+        translateX(0)
+        rotate(8deg);
+
+}
+
+
+.timeline-item.visual-visible.right .image-secondary {
+
+    transform:
+        translateX(-50%)
+        translateX(0)
+        rotate(-8deg);
+
+}
+
+
+/* ==========================================================
+   Stagger
+   ========================================================== */
+
+.timeline-item.visual-visible .image-main {
+
+    transition:
+        opacity .7s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.timeline-item.visual-visible .image-secondary {
+
+    transition:
+        opacity .7s ease .2s,
+        transform .9s cubic-bezier(.2,.8,.2,1) .2s;
+
+}
+
+
+/* ==========================================================
+   Hover
+   ========================================================== */
+
+.timeline-item.visual-visible .image-main:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        rotate(-2deg);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.22);
+
+}
+
+
+.timeline-item.visual-visible .image-secondary:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        rotate(2deg);
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.22);
+
+}
+
+/* ==========================================================
+   Hide Experience Visuals
+   ========================================================== */
+
+@media (max-width: 992px) {
+
+    .timeline-visual {
+
+        display: none;
+
+    }
+
 }
 
 /* ==========================================================
@@ -2749,86 +3120,3 @@ a:focus{
 
 }
 
-/* ========================= */
-/* Experience Company */
-/* ========================= */
-
-.timeline-company {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.company-logo {
-    width: 90px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 12px;
-}
-
-.company-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-
-}
-
-.timeline-company h4 {
-    margin-bottom: 5px;
-}
-
-.timeline-company span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.timeline-year {
-    margin-bottom: 0;
-    }
-
-/* ========================= */
-/* Experience List */
-/* ========================= */
-
-.experience-list {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.experience-list li {
-    margin-bottom: 10px;
-    line-height: 1.7;
-}
-
-.experience-list li:last-child {
-    margin-bottom: 0;
-}
-
-/* ========================= */
-/* Mobile */
-/* ========================= */
-
-@media (max-width: 576px) {
-
-    .company-logo {
-        width: 80px;
-        height: 60px;
-        margin-bottom: 10px;
-    }
-
-    .experience-list {
-        padding-left: 18px;
-    }
-
-    .experience-list li {
-        line-height: 1.6;
-        margin-bottom: 8px;
-    }
-
-}
