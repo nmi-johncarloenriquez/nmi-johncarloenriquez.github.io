@@ -2111,234 +2111,6 @@ body{
 }
 
 /* ==========================================================
-   PROJECTS SECTION
-   ========================================================== */
-
-#projects{
-
-    position:relative;
-    background:#ffffff;
-    overflow:hidden;
-
-}
-
-#projects::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-180px;
-    right:-180px;
-
-    width:420px;
-    height:420px;
-
-    border-radius:50%;
-
-    background:rgba(10,41,71,.05);
-
-}
-
-#projects::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-220px;
-    left:-220px;
-
-    width:520px;
-    height:520px;
-
-    border-radius:50%;
-
-    background:rgba(139,94,60,.05);
-
-}
-
-
-/* ==========================================================
-   CAROUSEL
-   ========================================================== */
-
-#projectCarousel{
-
-    margin-top:60px;
-
-}
-
-.carousel-item{
-
-    padding:25px 0;
-
-}
-
-.carousel-control-prev,
-.carousel-control-next{
-
-    width:55px;
-    height:55px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    background:rgba(10,41,71,.85);
-
-    border-radius:50%;
-
-    opacity:1;
-
-    transition:.3s;
-
-}
-
-.carousel-control-prev{
-
-    left:-25px;
-
-}
-
-.carousel-control-next{
-
-    right:-25px;
-
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover{
-
-    background:var(--accent);
-
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon{
-
-    filter:brightness(10);
-
-}
-
-
-/* ==========================================================
-   PROJECT CARD
-   ========================================================== */
-
-.project-card{
-
-    position:relative;
-
-    background:#ffffff;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:
-
-        0 15px 35px rgba(0,0,0,.08);
-
-    transition:.35s;
-
-    height:100%;
-
-}
-
-.project-card:hover{
-
-    transform:
-        translateY(-12px);
-
-    box-shadow:
-
-        0 30px 60px rgba(0,0,0,.15);
-
-}
-
-
-/* ==========================================================
-   IMAGE
-   ========================================================== */
-
-.project-card img{
-
-    width:100%;
-    height:220px;
-
-    object-fit:cover;
-
-    transition:.45s;
-
-}
-
-.project-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-
-/* ==========================================================
-   CONTENT
-   ========================================================== */
-
-.project-card h5{
-
-    padding:25px 20px 10px;
-
-    font-weight:700;
-
-    color:var(--primary);
-
-}
-
-.project-card p{
-
-    padding:0 20px 25px;
-
-    color:#666;
-
-    line-height:1.7;
-
-}
-
-
-/* ==========================================================
-   Hover Overlay
-   ========================================================== */
-
-.project-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(10,41,71,.08)
-        );
-
-    opacity:0;
-
-    transition:.35s;
-
-}
-
-.project-card:hover::before{
-
-    opacity:1;
-
-}
-
-
-/* ==========================================================
    FOOTER
    ========================================================== */
 
@@ -3119,4 +2891,647 @@ a:focus{
     }
 
 }
+
+
+/* ==========================================================
+PROJECTS SECTION
+========================================================== */
+
+#projects {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Decorative background */
+
+#projects::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(10, 41, 71, .05);
+}
+
+#projects::after {
+    content: "";
+    position: absolute;
+    bottom: -220px;
+    left: -220px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: rgba(139, 94, 60, .05);
+}
+
+/* ==========================================================
+CAROUSEL
+========================================================== */
+
+#projectCarousel {
+    position: relative;
+    margin-top: 60px;
+    padding-bottom: 90px;
+}
+
+#projectCarousel .carousel-inner {
+    overflow: visible;
+}
+
+#projectCarousel .carousel-item {
+    padding: 20px 70px;
+}
+
+/* ==========================================================
+   PROJECT CAROUSEL FADE ANIMATION
+   ========================================================== */
+
+#projectCarousel .carousel-item {
+    transition:none !important;
+}
+
+
+/* ----------------------------------------------------------
+   Screenshot - Fade Right
+   ---------------------------------------------------------- */
+
+#projectCarousel .project-preview.project-animate-right {
+    animation:
+        projectFadeRight .9s ease both;
+}
+
+
+/* ----------------------------------------------------------
+   Project Info - Fade Left
+   ---------------------------------------------------------- */
+
+#projectCarousel .project-info.project-animate-left {
+    animation:
+        projectFadeLeft .9s ease both;
+}
+
+
+/* ==========================================================
+   FADE RIGHT
+   Similar to AOS fade-right
+   ========================================================== */
+
+@keyframes projectFadeRight {
+    from {
+        opacity:0;
+        transform:
+            translate3d(-100px, 0, 0);
+    }
+
+    to {
+        opacity:1;
+        transform:
+            translate3d(0, 0, 0);
+    }
+}
+
+
+/* ==========================================================
+   FADE LEFT
+   Similar to AOS fade-left
+   ========================================================== */
+
+@keyframes projectFadeLeft {
+    from {
+        opacity:0;
+        transform:
+            translate3d(100px, 0, 0);
+    }
+
+    to {
+        opacity:1;
+        transform:
+            translate3d(0, 0, 0);
+    }
+}
+
+/* ==========================================================
+PROJECT SHOWCASE
+========================================================== */
+
+.project-showcase {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(360px, .75fr);
+    align-items: center;
+    gap: 70px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================================================
+PROJECT IMAGE
+========================================================== */
+
+.project-preview {
+    position: relative;
+}
+
+.project-image {
+    position: relative;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+    overflow: hidden;
+}
+
+.project-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, .18),
+            transparent 50%
+        );
+    pointer-events: none;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform .6s ease;
+}
+
+.project-showcase:hover .project-image img {
+    transform: scale(1.025);
+}
+
+/* ==========================================================
+PROJECT INFORMATION
+========================================================== */
+
+.project-info {
+    position: relative;
+}
+
+.project-brand {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 20px;
+}
+
+.project-brand img {
+    max-width: 150px;
+    max-height: 55px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.project-info h3 {
+    margin: 0 0 18px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.project-description {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ==========================================================
+CONTRIBUTION
+========================================================== */
+
+.project-contribution {
+    padding-left: 18px;
+    margin-bottom: 28px;
+    border-left: 3px solid var(--accent);
+}
+
+.project-contribution h6,
+.project-stack h6 {
+    margin-bottom: 8px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.project-contribution p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ==========================================================
+   PROJECT TECHNOLOGIES
+   ========================================================== */
+
+#projects .project-stack {
+    position:relative;
+    display:block;
+    width:100%;
+    margin-top:25px;
+}
+
+
+#projects .project-stack h6 {
+    display:block;
+    margin:0 0 12px;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--primary);
+}
+
+
+/* Technology icon container */
+
+#projects .project-stack .tech-icons {
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:10px;
+    width:100%;
+}
+
+
+/* Individual icon */
+
+#projects .project-stack .p-tech-icon {
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 42px;
+    width:42px;
+    height:42px;
+    margin:0;
+    padding:0;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:10px;
+    background:#fff;
+    box-sizing:border-box;
+    opacity:1;
+    transform:none;
+    box-shadow:none;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+/* Font Awesome icon */
+
+#projects .project-stack .p-tech-icon i {
+    display:block;
+    position:static;
+    width:auto;
+    height:auto;
+    margin:0;
+    padding:0;
+    font-size:22px;
+    line-height:1;
+    opacity:1;
+}
+
+
+/* Hover */
+
+#projects .project-stack .p-tech-icon:hover {
+
+    transform:translateY(-4px);
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.10);
+
+}
+
+/* ==========================================================
+NAVIGATION ARROWS
+========================================================== */
+
+#projectCarousel .carousel-control-prev,
+#projectCarousel .carousel-control-next {
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    opacity: 1;
+    background: transparent;
+}
+
+#projectCarousel .carousel-control-prev {
+    left: 0;
+}
+
+#projectCarousel .carousel-control-next {
+    right: 0;
+}
+
+.project-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.project-arrow:hover {
+    background: var(--accent);
+    transform: scale(1.08);
+}
+
+/* ==========================================================
+   PROJECT LOGO INDICATORS
+   ========================================================== */
+
+#projectCarousel .project-indicators {
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:16px;
+    width:auto;
+    height:auto;
+    margin:0;
+    padding:0;
+}
+
+
+/* Individual logo */
+
+#projectCarousel .project-indicator {
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    margin:0;
+    padding:8px;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:50%;
+    background:#ffffff;
+    text-indent:0;
+    opacity:.45;
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+/* Logo */
+
+#projectCarousel .project-indicator img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+/* Hover */
+
+#projectCarousel .project-indicator:hover {
+    opacity:.8;
+    transform:translateY(-3px);
+}
+
+
+/* Active project */
+
+#projectCarousel .project-indicator.active {
+    opacity:1;
+    transform:scale(1.15);
+    border-color:var(--accent);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.12);
+}
+
+/* ==========================================================
+CAROUSEL TRANSITION
+========================================================== */
+
+#projectCarousel .carousel-item {
+    transition:
+        transform .65s ease-in-out,
+        opacity .35s ease;
+}
+
+/* ==========================================================
+TABLET
+========================================================== */
+
+@media (max-width: 991px) {
+    .project-showcase {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(300px, .8fr);
+        gap: 40px;
+    }
+
+    #projectCarousel .carousel-item {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .project-info h3 {
+        font-size: 1.9rem;
+    }
+}
+
+/* ==========================================================
+MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+    #projectCarousel {
+        margin-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    #projectCarousel .carousel-item {
+        padding: 10px 25px 20px;
+    }
+
+    .project-showcase {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .project-image {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .project-image img {
+        border-radius: 10px;
+        aspect-ratio: 16 / 10;
+    }
+
+    .project-brand {
+        height: 45px;
+        margin-bottom: 15px;
+    }
+
+    .project-brand img {
+        max-width: 120px;
+        max-height: 45px;
+    }
+
+    .project-info h3 {
+        font-size: 1.7rem;
+    }
+
+    .project-description {
+        font-size: .95rem;
+    }
+
+    .project-contribution p {
+        font-size: .92rem;
+    }
+
+    /* Keep arrows outside the content */
+
+    #projectCarousel .carousel-control-prev {
+        left: -5px;
+    }
+
+    #projectCarousel .carousel-control-next {
+        right: -5px;
+    }
+
+    .project-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .project-indicators {
+        gap: 9px;
+    }
+
+    .project-indicator {
+        width: 42px;
+        height: 42px;
+        padding: 6px;
+    }
+}
+
+/* ==========================================================
+SMALL MOBILE
+========================================================== */
+
+@media (max-width: 480px) {
+    #projectCarousel .carousel-item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .project-showcase {
+        gap: 25px;
+    }
+
+    .project-indicators {
+        gap: 6px;
+    }
+
+    .project-indicator {
+        width: 37px;
+        height: 37px;
+        padding: 5px;
+    }
+}
+
+
+/* ==========================================================
+   TECHNOLOGY BRAND COLORS
+   ========================================================== */
+
+#projects .project-stack .fa-php {
+    color:#777bb4;
+}
+
+
+#projects .project-stack .fa-laravel {
+    color:#ff2d20;
+}
+
+
+#projects .project-stack .fa-js {
+    color:#f7df1e;
+}
+
+
+#projects .project-stack .fa-database {
+    color:#4479a1;
+}
+
+
+#projects .project-stack .fa-aws {
+    color:#ff9900;
+}
+
+#projects .project-stack .fa-html5 {
+    color: rgb(227, 79, 38);
+}
+
+#projects .project-stack .fa-css3-alt {
+    color: rgb(21, 114, 182);
+}
+
+#projects .project-stack .fa-bootstrap {
+    color:  rgb(121, 82, 179);
+}
+
+#projects .project-stack .fa-fire {
+    color:  rgb(241, 79, 41);
+}
+
+#projects .project-stack .fa-node-js{
+    color:  rgb(104, 160, 99);
+}
+
+
+
+
 

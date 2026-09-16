@@ -337,3 +337,90 @@ experienceItems.forEach(item => {
     experienceObserver.observe(item);
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const projectCarousel =
+        document.getElementById('projectCarousel');
+
+    if (!projectCarousel) {
+        return;
+    }
+
+
+    function animateProject(item) {
+
+        const preview =
+            item.querySelector('.project-preview');
+
+        const info =
+            item.querySelector('.project-info');
+
+
+        /*
+         * Remove previous animation classes
+         */
+        if (preview) {
+            preview.classList.remove(
+                'project-animate-right'
+            );
+        }
+
+        if (info) {
+            info.classList.remove(
+                'project-animate-left'
+            );
+        }
+
+
+        /*
+         * Force browser reflow.
+         * This allows the animation to restart.
+         */
+        void item.offsetWidth;
+
+
+        /*
+         * Start animations
+         */
+        if (preview) {
+            preview.classList.add(
+                'project-animate-right'
+            );
+        }
+
+        if (info) {
+            info.classList.add(
+                'project-animate-left'
+            );
+        }
+
+    }
+
+
+    /*
+     * Animate initial project
+     */
+    const initialItem =
+        projectCarousel.querySelector(
+            '.carousel-item.active'
+        );
+
+    if (initialItem) {
+        animateProject(initialItem);
+    }
+
+
+    /*
+     * Animate every new project
+     */
+    projectCarousel.addEventListener(
+        'slid.bs.carousel',
+        function (event) {
+
+            animateProject(event.relatedTarget);
+
+        }
+    );
+
+});
