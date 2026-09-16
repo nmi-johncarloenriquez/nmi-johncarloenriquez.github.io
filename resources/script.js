@@ -348,6 +348,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    /*
+     * Animate project content
+     */
     function animateProject(item) {
 
         const preview =
@@ -374,14 +377,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         /*
-         * Force browser reflow.
-         * This allows the animation to restart.
+         * Force browser reflow
+         * so the animation can restart
          */
         void item.offsetWidth;
 
 
         /*
-         * Start animations
+         * Start entrance animations
          */
         if (preview) {
             preview.classList.add(
@@ -412,15 +415,170 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /*
-     * Animate every new project
+     * Fade out current project
+     * before changing to the next project
+     */
+    projectCarousel.addEventListener(
+        'slide.bs.carousel',
+        function (event) {
+
+            const currentItem =
+                projectCarousel.querySelector(
+                    '.carousel-item.active'
+                );
+
+            if (currentItem) {
+                currentItem.classList.add(
+                    'project-fading-out'
+                );
+            }
+
+        }
+    );
+
+
+    /*
+     * Animate new project after
+     * carousel transition finishes
      */
     projectCarousel.addEventListener(
         'slid.bs.carousel',
         function (event) {
 
-            animateProject(event.relatedTarget);
+            /*
+             * Remove fade-out state
+             * from all projects
+             */
+            projectCarousel
+                .querySelectorAll('.carousel-item')
+                .forEach(function (item) {
+
+                    item.classList.remove(
+                        'project-fading-out'
+                    );
+
+                });
+
+
+            /*
+             * Animate the newly active project
+             */
+            animateProject(
+                event.relatedTarget
+            );
 
         }
     );
+
+
+    /* ==========================================================
+   INTERACTIVE EXPERIENCE TIMELINE
+   ========================================================== */
+
+    const timeline = document.querySelector('.timeline');
+
+    if (timeline) {
+
+        const timelineItems =
+            timeline.querySelectorAll('.timeline-item');
+
+
+        function updateTimeline() {
+
+            const rect = timeline.getBoundingClientRect();
+
+            const viewportHeight = window.innerHeight;
+
+
+            /*
+            * Use the center area of the viewport
+            * as the timeline drawing position.
+            */
+            const triggerPosition = viewportHeight * 0.55;
+
+
+            /*
+            * How far the timeline has been reached.
+            */
+            let progress =
+                triggerPosition - rect.top;
+
+
+            /*
+            * Clamp progress between 0 and timeline height.
+            */
+            progress = Math.max(
+                0,
+                Math.min(progress, rect.height)
+            );
+
+
+            /*
+            * Convert to percentage.
+            */
+            const percentage =
+                (progress / rect.height) * 100;
+
+
+            /*
+            * Update CSS variable.
+            */
+            timeline.style.setProperty(
+                '--timeline-progress',
+                `${percentage}%`
+            );
+
+
+            /*
+            * Activate timeline points
+            * once the line reaches them.
+            */
+            timelineItems.forEach(item => {
+
+                /*
+                * Position of the item's dot
+                * relative to the timeline.
+                */
+                const dotPosition =
+                    item.offsetTop + 52;
+
+
+                if (progress >= dotPosition) {
+
+                    if (!item.classList.contains('timeline-active')) {
+
+                        item.classList.add('timeline-active');
+
+                    }
+
+                } else {
+
+                    item.classList.remove(
+                        'timeline-active'
+                    );
+
+                }
+
+            });
+
+        }
+
+
+        /*
+        * Update while scrolling.
+        */
+        window.addEventListener(
+            'scroll',
+            updateTimeline,
+            { passive: true }
+        );
+
+
+        /*
+        * Initial calculation.
+        */
+        updateTimeline();
+
+    }
 
 });
