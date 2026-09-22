@@ -7,11 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeActiveNavigation();
     initializeTypingEffect();
 
-    initializeFloatingIcons();
-    enhanceFloatingIcons();
-    initializeIconParallax();
-    observeSkillsSection();
-    initializeReducedMotion();
 
 });
 
@@ -579,6 +574,153 @@ document.addEventListener('DOMContentLoaded', function () {
         */
         updateTimeline();
 
+    
     }
+
+    const aboutSection =
+        document.getElementById('about');
+
+    const aboutCard =
+        aboutSection?.querySelector('.about-card');
+
+
+    if (!aboutSection || !aboutCard) {
+        return;
+    }
+
+
+    /*
+     * =========================
+     * Highlight Stagger
+     * =========================
+     */
+
+    const highlights =
+        aboutCard.querySelectorAll('.highlight-text');
+
+
+    highlights.forEach(function (highlight, index) {
+
+        const delay =
+            Math.min(index * 0.08, 1.2);
+
+        highlight.style.transitionDelay =
+            `${delay}s`;
+
+    });
+
+
+    /*
+     * =========================
+     * About Section Observer
+     * =========================
+     */
+
+    const aboutObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        /*
+                         * About section entered viewport.
+                         */
+                        aboutCard.classList.add(
+                            'about-visible'
+                        );
+
+
+                        /*
+                         * On mobile/tablet:
+                         * trigger highlights immediately.
+                         */
+                        if (window.innerWidth <= 991) {
+
+                            aboutCard.classList.add(
+                                'highlights-visible'
+                            );
+
+                        }
+
+                    } else {
+
+                        /*
+                         * About section has completely
+                         * left the viewport.
+                         *
+                         * Reset everything so the animation
+                         * can replay on the next visit.
+                         */
+                        aboutCard.classList.remove(
+                            'about-visible'
+                        );
+
+                        aboutCard.classList.remove(
+                            'highlights-visible'
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0
+            }
+        );
+
+
+    aboutObserver.observe(aboutSection);
+
+
+    /*
+     * =========================
+     * Desktop Highlight Trigger
+     * =========================
+     */
+
+    const highlightTrigger =
+        aboutSection.querySelector(
+            '.about-highlight-trigger'
+        );
+
+
+    if (!highlightTrigger) {
+        return;
+    }
+
+
+    const highlightObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    /*
+                     * Only use this trigger on desktop.
+                     */
+                    if (
+                        window.innerWidth > 991 &&
+                        entry.isIntersecting
+                    ) {
+
+                        aboutCard.classList.add(
+                            'highlights-visible'
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+
+    highlightObserver.observe(highlightTrigger);
 
 });

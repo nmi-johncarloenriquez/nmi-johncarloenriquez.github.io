@@ -3802,4 +3802,401 @@ SMALL MOBILE
 
 }
 
+/* ========================= */
+/* About Me */
+/* ========================= */
+
+#about {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ========================= */
+/* About Card */
+/* ========================= */
+
+.about-card {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+
+    align-items: center;
+
+    min-height: 550px;
+
+    padding: 70px 80px;
+
+    border-radius: 40px;
+
+    /*
+     * Match this with your Hero background.
+     * Replace this value with your existing hero blue
+     * if you already have a variable/color defined.
+     */
+    background: var(--primary);
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform: translateY(80px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Activated by JavaScript */
+
+.about-card.about-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================= */
+/* Left Content */
+/* ========================= */
+
+.about-content {
+    position: relative;
+    z-index: 2;
+
+    padding-right: 50px;
+    text-align: justify;
+}
+
+
+/* Small section label */
+
+.about-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 7px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* Heading */
+
+.about-content h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+}
+
+.about-content h2 span {
+    color: #b9dcff;
+}
+
+
+/* ========================= */
+/* About Note */
+/* ========================= */
+
+.about-note {
+    max-width: 700px;
+}
+
+.about-note p {
+    margin-bottom: 22px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* ========================= */
+/* Animated Text Highlight */
+/* ========================= */
+
+.highlight-text {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 0px 4px;
+
+    margin: 2px 2px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    border-radius: 7px;
+
+    /*
+     * Keep the highlight hidden initially.
+     */
+    background: transparent;
+
+    /*
+     * Prevent the text from appearing
+     * above the highlight layer incorrectly.
+     */
+    z-index: 0;
+}
+
+
+/*
+ * Animated highlight layer
+ */
+
+.highlight-text::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background: var(--light);
+
+    border-radius: 7px;
+
+    transition:
+        width 0.9s
+        cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+/*
+ * Trigger the fill animation
+ */
+
+.about-card.highlights-visible .highlight-text::before {
+    width: 100%;
+}
+
+
+/*
+ * Change text color after the highlight
+ * has started filling.
+ */
+
+.about-card.highlights-visible .highlight-text {
+    color: #123c69;
+
+    transition:
+        color 0.15s ease 0.35s;
+}
+
+
+/* ========================= */
+/* Right Image */
+/* ========================= */
+
+.about-image-wrapper {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+
+/* Decorative background */
+
+.about-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transform: translate(20px, 20px);
+}
+
+
+/* Image container */
+
+.about-image-frame {
+    position: relative;
+
+    z-index: 1;
+
+    width: min(100%, 350px);
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Image */
+
+.about-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media (max-width: 991px) {
+
+    .about-card {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 60px 50px;
+    }
+
+    .about-content {
+        padding-right: 0;
+    }
+
+    .about-image-wrapper {
+        min-height: 400px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .about-card {
+        padding: 45px 25px;
+
+        border-radius: 28px;
+
+        gap: 40px;
+    }
+
+    .about-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-note p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .about-image-frame {
+        width: 280px;
+    }
+
+    .about-image-wrapper::before {
+        width: 260px;
+        height: 260px;
+    }
+
+}
+
+.about-highlight-trigger {
+    position: absolute;
+
+    left: 0;
+
+    top: 80%;
+
+    width: 100%;
+    height: 1px;
+
+    pointer-events: none;
+}
+
+@media (max-width: 991px) {
+
+    .about-card {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 60px 50px;
+    }
+
+    /* Image first */
+    .about-image-wrapper {
+        order: 1;
+    }
+
+    /* Text second */
+    .about-content {
+        order: 2;
+    }
+
+    .about-image-frame {
+        width: min(100%, 320px);
+    }
+
+    .about-image-wrapper {
+        min-height: auto;
+    }
+
+    .about-highlight-trigger {
+        top: 5%;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .about-card {
+        padding: 45px 25px;
+
+        border-radius: 28px;
+
+        gap: 35px;
+    }
+
+    .about-image-frame {
+        width: 260px;
+    }
+
+}
+
 
