@@ -723,4 +723,85 @@ document.addEventListener('DOMContentLoaded', function () {
 
     highlightObserver.observe(highlightTrigger);
 
+    /* ========================= */
+    /* Contact Cards Animation */
+    /* ========================= */
+
+    const contactSection = document.querySelector("#contact_section");
+    const contactCards = document.querySelectorAll(".contact-card");
+
+    if (contactSection && contactCards.length) {
+
+        const contactObserver = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        // Trigger cards one by one
+                        contactCards.forEach((card) => {
+                            card.classList.add("contact-visible");
+                        });
+
+                    } else {
+
+                        // Reset animation when section leaves viewport
+                        contactCards.forEach((card) => {
+                            card.classList.remove("contact-visible");
+                        });
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+        contactObserver.observe(contactSection);
+    }
+
+
+    //GA4 
+    const sections = document.querySelectorAll('#about, #experience, #projects, #contact, #contact_section');
+
+    const viewedSections = new Set();
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                const sectionName = entry.target.id;
+
+                // Prevent duplicate events
+                if (viewedSections.has(sectionName)) {
+                    return;
+                }
+
+                viewedSections.add(sectionName);
+
+                gtag('event', 'section_view', {
+                    section_name: sectionName
+                });
+
+                console.log('GA4 section viewed:', sectionName);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.25
+    });
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+
 });
